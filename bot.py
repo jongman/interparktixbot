@@ -4,7 +4,7 @@ from contextlib import closing
 from tweepy import OAuthHandler, API
 from requests import get
 from operator import not_
-from credit import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET
+from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET
 from lxml.html import ElementSoup
 from string import Template
 from StringIO import StringIO
