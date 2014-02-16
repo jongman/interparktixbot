@@ -4,7 +4,7 @@ from contextlib import closing
 from tweepy import OAuthHandler, API
 from requests import get
 from operator import not_
-from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET
+from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET, MAX_TWEETS
 from lxml.html import ElementSoup
 from string import Template
 from StringIO import StringIO
@@ -72,7 +72,7 @@ def main():
         # for e in events: 
         #     print TWEET_TEMPLATE.substitute(e).encode('utf-8')
         new_events = [e for e in events if not has_seen(storage, e)]
-        new_events = new_events[:1]
+        new_events = new_events[:MAX_TWEETS]
 
         update_twitter(new_events)
         record_events(storage, new_events)
