@@ -57,7 +57,10 @@ def tweet(text):
 
 def update_twitter(events):
     for ev in events:
-        tweet(render_event(ev))
+        try:
+            tweet(render_event(ev))
+        except:
+            pass
 
 def has_seen(storage, event):
     return event['url'] in storage
