@@ -67,7 +67,7 @@ def has_seen(storage, event):
 
 def record_events(storage, events):
     for e in events:
-        storage[e['url']] = 1
+        storage[e['url']] = e
 
 def main():
     with closing(open_shelf(SHELF_FILENAME)) as storage:
