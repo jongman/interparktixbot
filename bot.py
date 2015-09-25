@@ -53,14 +53,11 @@ def render_event(event):
 
 def tweet(text):
     print 'tweeting', text.encode('utf-8')
-    get_api().update_status(text)
+    get_api().update_status(status=text)
 
 def update_twitter(events):
     for ev in events:
-        try:
             tweet(render_event(ev))
-        except:
-            pass
 
 def has_seen(storage, event):
     return event['url'] in storage
